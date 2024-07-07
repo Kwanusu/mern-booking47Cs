@@ -39,18 +39,24 @@ const SignIn = () => {
       </h2>
       <label className="text-gray-700 flex-1 text-sm font-bold">
         Email
-        <input type="email" className='border rounded w-full py-1 px-2 font-normal' {...register("email", { required: "This field is required" })} />
-        {errors.email && <span className='text-red-500'>{errors.email.message}</span>}
+        <input type="email" className='border rounded w-full py-1 px-2 font-normal' 
+        {...register("email", { required: "This field is required" })} />
+        {errors.email && (
+          <span className='text-red-500'>{errors.email.message}</span>
+        )}
       </label>
       <label className="text-gray-700 flex-1 text-sm font-bold">
         Password
-        <input type="password" className='border rounded w-full py-1 px-2 font-normal' {...register("password", {
+        <input type="password" className='border rounded w-full py-1 px-2 font-normal' 
+        {...register("password", {
           required: "This field is required",
           minLength: {
             value: 6, message: "Password must be at least 6 characters"
           }
         })} />
-        {errors.password && <span className='text-red-500'>{errors.password.message}</span>}
+        {errors.password && (
+          <span className='text-red-500'>{errors.password.message}</span>
+          )}
       </label>
       <span className='flex items-center justify-between'>
         <span className='text-md font-medium'>
