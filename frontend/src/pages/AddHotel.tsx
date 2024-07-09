@@ -6,23 +6,51 @@ import * as apiClient from '../api-client'
 
 const AddHotel = () => {
   const {showToast} = useAppContext();
-  const { mutate, isLoading} = useMutation(apiClient.AddMyHotel, {
+  const { mutate, isLoading} = useMutation(apiClient.addMyHotel, {
     onSuccess: () => {
       showToast({ message: "Hotel saved!", type: "SUCCESS"})
     },
+  
     onError: () => {
       showToast({ message: "Error saving Hotel", type: "ERROR"});
     },
   });
-
+ 
   const handleSave = (hotelFormData: FormData) => {
     mutate(hotelFormData)
   }
+  
   return (
     <>
-    <ManageHotelForm onSave={handleSave} isLoading={isLoading}/>;
+    <ManageHotelForm onSave={handleSave} isLoading={isLoading}/>
     </>
   )
 }
 
 export default AddHotel;
+
+// import React from 'react';
+// import { useMutation } from 'react-query';
+// import ManageHotelForm from '../forms/ManageHotelForm/ManageHotelForm';
+// import { useAppContext } from '../contexts/AppContext';
+// import * as apiClient from '../api-client';
+
+// const AddHotel: React.FC = () => {
+//   const { showToast } = useAppContext();
+//   const { mutate, isLoading } = useMutation(apiClient.addMyHotel, {
+//     onSuccess: () => {
+//       showToast({ message: 'Hotel saved!', type: 'SUCCESS' });
+//     },
+//     onError: (error: any) => {
+//       showToast({ message: error.message || 'Error saving hotel', type: 'ERROR' });
+//     },
+//   });
+
+//   const handleSave = (hotelFormData: FormData) => {
+//     mutate(hotelFormData);
+//   };
+
+//   return <ManageHotelForm onSave={handleSave} isLoading={isLoading} />;
+// };
+
+// export default AddHotel;
