@@ -59,13 +59,13 @@ apiClient.createPaymentIntent(hotelId as string, numberOfNights.toString()),
         />
         
         {currentUser && paymentIntentData && (
-            <Elements stripe= {stripePromise}
+            <Element stripe= {stripePromise}
               options= {{
                 clientSecret: paymentIntentData.clientSecret,
               }}>
                 <BookingForm currentUser={currentUser}
                 paymentIntent={paymentIntentData}/>
-            </Elements>
+            </Element>
         )}
     </div>
   )

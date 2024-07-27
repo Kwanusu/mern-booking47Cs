@@ -4,12 +4,22 @@ import * as apiClient from '../api-client'
 import { AiFillStar } from 'react-icons/ai';
 import GuestInfoForm from '../forms/GuestInfoForm/GuestInfoForm';
 
+
+type Hotel = {
+    name: string;
+    imageUrls: string[];
+    facilities: string[];
+  };
+  
+  type Props = {
+    hotel: Hotel;
+  };
 const Detail = () => {
     const {hotelId} = useParams();
 
     const { data: hotel } = useQuery(
         "fetcchHotelById", () => 
-    apiClient.fetcchHotelById(hotelId as string),
+    apiClient.fetchHotelById(hotelId as string),
         {
             enabled: !!hotelId,
         }
@@ -30,7 +40,7 @@ const Detail = () => {
             <h1 className='text-3xl font-bold'> {hotel.name}</h1>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-            {hotel.imageUrls.map((image) => (
+            {hotel.imageUrls.map((image: string) => (
             <div className="h-[300px]">
             <img src={image} 
             alt={hotel.name} 

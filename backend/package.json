@@ -34,9 +34,12 @@
     "@types/cookie-parser": "^1.4.7",
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
+    "@types/express-validator": "^3.0.0",
     "@types/jsonwebtoken": "^9.0.6",
+    "@types/mongoose": "^5.11.97",
     "@types/multer": "^1.4.11",
-    "@types/node": "^20.14.9",
+    "@types/node": "^20.14.12",
+    "@types/stripe": "^8.0.417",
     "nodemon": "^3.1.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.3"

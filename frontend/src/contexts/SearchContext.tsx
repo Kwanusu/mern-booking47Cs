@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 
 
 
@@ -64,7 +64,7 @@ export const SearchContextProvider = ({ children }: SearchContextProviderProps) 
         sessionStorage.setItem("childCount", childCount.toString());
 
         if (hotelId) {
-            sessionStorage.getItem("hotelID", hotelId);
+            sessionStorage.setItem("hotelID", hotelId);
         }
     };
     return (
