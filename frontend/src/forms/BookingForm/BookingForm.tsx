@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { paymentIntentResponse, UserType } from '../../../../backend/src/shared/types'
 import { useForm } from 'react-hook-form';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
@@ -54,7 +54,7 @@ const BookingForm = ({ currentUser, paymentIntent }: Props) => {
         }
     });
 
-    const onSubmit = async (formData: BookingFormdata) => {
+    const onSubmit = async (formData: BookingFormData) => {
         if (!stripe || !elements){
             return;
         }

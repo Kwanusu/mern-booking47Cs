@@ -1,5 +1,4 @@
 import { paymentIntentResponse, UserType } from './../../backend/src/shared/types';
-
 import { RegisterFormData } from './pages/Register';
 import { SignInFormData } from './pages/SignIn';
 import { HotelSearchResponse, HotelType } from '../../backend/src/shared/types';

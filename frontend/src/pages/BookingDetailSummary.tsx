@@ -1,11 +1,11 @@
-import React from 'react'
+
 import { HotelType } from '../../../backend/src/shared/types';
 
 type Props = {
     checkIn: Date;
     checkOut: Date;
     adultCount: number;
-    chidCount: number;
+    childCount: number;
     numberOfNights: number;
     hotel: HotelType;
 }
@@ -13,7 +13,7 @@ type Props = {
 export const BookingDetailSummary = ({checkIn,
     checkOut,
     adultCount,
-    chidCount,
+    childCount,
     numberOfNights,
     hotel}: Props) => {
   return (
@@ -42,7 +42,7 @@ export const BookingDetailSummary = ({checkIn,
         <div>
             Guests:
             <div className="font-bold">
-                {adultCount} adults & {chidCount} children
+                {adultCount} adults & {childCount} children
             </div>
         </div>
     </div>

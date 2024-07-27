@@ -1,5 +1,4 @@
-import { BookingType, paymentIntentResponse } from './../shared/types';
-
+import { BookingType } from './../shared/types';
 import express, {Request, Response} from 'express';
 import Hotel from '../models/hotel';
 import { HotelSearchResponse } from '../shared/types';

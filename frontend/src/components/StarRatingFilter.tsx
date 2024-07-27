@@ -1,4 +1,4 @@
-import React from 'react';
+
 type Props = {
     selectedStars: string[];
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;

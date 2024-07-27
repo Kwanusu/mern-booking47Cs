@@ -1,4 +1,4 @@
-import React from 'react'
+
 import DatePicker from 'react-datepicker';
 import { useSearchContext } from '../../contexts/SearchContext';
 import { useAppContext } from '../../contexts/AppContext';
@@ -13,7 +13,7 @@ type GuestInfoFormData = {
     checkIn: Date;
     checkOut: Date;
     adultCount: number;
-    chidCount: number;
+    childCount: number;
 }
 const GuestInfoForm = ({ hotelId, pricePerNight }: Props) => {
 
@@ -30,7 +30,7 @@ const GuestInfoForm = ({ hotelId, pricePerNight }: Props) => {
             checkIn: search.checkIn,
             checkOut: search.checkOut,
             adultCount: search.adultCount,
-            chidCount: search.childCount, 
+            childCount: search.childCount, 
         },
     });
 
@@ -47,7 +47,7 @@ const GuestInfoForm = ({ hotelId, pricePerNight }: Props) => {
             data.checkIn,
             data.checkOut,
             data.adultCount,
-            data.chidCount
+            data.childCount
         );
         Navigate("/sign-in", { state: { from: location }})
     } 
@@ -56,7 +56,7 @@ const GuestInfoForm = ({ hotelId, pricePerNight }: Props) => {
             data.checkIn,
             data.checkOut,
             data.adultCount,
-            data.chidCount
+            data.childCount
         );
         Navigate(`/hotel/${hotelId}/booking`);
     }; 

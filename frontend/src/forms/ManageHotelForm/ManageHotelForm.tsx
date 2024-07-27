@@ -88,7 +88,7 @@
 
 // export default ManageHotelForm;
 
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import DetailsSection from './DetailsSection';
 import TypeSection from './TypeSection';

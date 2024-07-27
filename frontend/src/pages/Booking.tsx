@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import * as apiClient from "../api-client"
 import { useQuery } from 'react-query'
 import BookingForm from '../forms/BookingForm/BookingForm';

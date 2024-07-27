@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { hotelTypes } from '../config/hotel-options-config';
 type Props = {
     selectedHotelTypes: string[];
