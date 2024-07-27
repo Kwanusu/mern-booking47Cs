@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { useMutation, useQueryClient } from 'react-query';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAppContext } from '../contexts/AppContext';
 import * as apiClient from '../api-client';
 
@@ -14,12 +14,13 @@ const SignIn = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<SignInFormData>();
   const navigate = useNavigate();
   const { showToast } = useAppContext();
+  const location = useLocation();
 
   const mutation = useMutation(apiClient.signIn, {
     onSuccess: async () => {
       showToast({ message: "Sign in Successful!", type: "SUCCESS" });
       await queryClient.invalidateQueries("validateToken");
-      navigate("/");
+      navigate(location.state?.from?.pathname || "/");
     },
     onError: (error: Error) => {
       console.error('Error during sign in:', error);
