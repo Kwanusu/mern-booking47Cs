@@ -6,6 +6,7 @@ import { useSearchContext } from '../contexts/SearchContext';
 import { useParams } from 'react-router-dom';
 import BookingDetailSummary from './BookingDetailSummary';
 import { useAppContext } from '../contexts/AppContext';
+import { Elements } from '@stripe/react-stripe-js';
 
 const Booking = () => {
 
@@ -59,13 +60,13 @@ apiClient.createPaymentIntent(hotelId as string, numberOfNights.toString()),
         />
         
         {currentUser && paymentIntentData && (
-            <Element stripe= {stripePromise}
+            <Elements stripe= {stripePromise}
               options= {{
                 clientSecret: paymentIntentData.clientSecret,
               }}>
                 <BookingForm currentUser={currentUser}
                 paymentIntent={paymentIntentData}/>
-            </Element>
+            </Elements>
         )}
     </div>
   )

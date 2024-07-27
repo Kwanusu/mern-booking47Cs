@@ -2,6 +2,7 @@ import { paymentIntentResponse, UserType } from './../../backend/src/shared/type
 import { RegisterFormData } from './pages/Register';
 import { SignInFormData } from './pages/SignIn';
 import { HotelSearchResponse, HotelType } from '../../backend/src/shared/types';
+import { BookingFormData } from './forms/BookingForm/BookingForm';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
 

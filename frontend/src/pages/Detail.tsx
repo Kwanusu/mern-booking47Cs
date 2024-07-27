@@ -11,9 +11,6 @@ type Hotel = {
     facilities: string[];
   };
   
-  type Props = {
-    hotel: Hotel;
-  };
 const Detail = () => {
     const {hotelId} = useParams();
 

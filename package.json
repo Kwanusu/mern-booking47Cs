@@ -10,6 +10,7 @@
     "@types/mongoose": "^5.11.97",
     "@types/multer": "^1.4.11",
     "@types/node": "^20.14.12",
-    "@types/stripe": "^8.0.417"
+    "@types/stripe": "^8.0.417",
+    "cloudinary": "^2.3.1"
   }
 }
