@@ -56,7 +56,7 @@ router.get("/search", async (req: Request, res: Response) => {
         res.status(500).json({message: "Something went wrong"});
     }
 }); 
-router.get("/", async (req: Request, res: Response) => {
+router.get("/", async ( res: Response) => {
     try {
        const hotels = await Hotel.find().sort("-lastUpdated")
        res.json(hotels) 

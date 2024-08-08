@@ -3,9 +3,11 @@
 import { useQuery } from 'react-query'
 import * as apiClient from '../api-client'
 import LatestDestinationCard from '../components/LatestDestinationCard';
+import { useParams } from 'react-router-dom';
 
 const Home = () => {
-    const { data: hotels } = useQuery("fetchQuery", () => apiClient.fetchHotels());
+    const { hotelId } = useParams();
+    const { data: hotels } = useQuery("fetchQuery", () => apiClient.fetchHotels(hotelId || ""));
 
     const topRowHotels = hotels?.slice(0, 2) || [];
     const bottomRowHotels = hotels?.slice(2) || [];
