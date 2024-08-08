@@ -14,6 +14,7 @@ type Props = {
 };
 
 export type BookingFormData = {
+    hotelId: string;
     firstName: string;
     lastName: string;
     email: string;
@@ -28,7 +29,7 @@ export type BookingFormData = {
 const BookingForm = ({ currentUser, paymentIntent }: Props) => {
     const stripe = useStripe();
     const elements = useElements();
-    // const { hotelId } = useParams();
+    const { hotelId } = useParams();
     const search = useSearchContext();
     const { showToast } = useAppContext();
 

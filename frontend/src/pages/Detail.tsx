@@ -15,12 +15,11 @@ const Detail = () => {
     const {hotelId} = useParams();
 
     const { data: hotel } = useQuery(
-        "fetcchHotelById", () => 
-    apiClient.fetchHotelById(hotelId as string),
+        "fetchHotelById", () => apiClient.fetchHotelById(hotelId as string),
         {
             enabled: !!hotelId,
         }
-   );
+    );
 
    if (!hotel) {
     return <></>

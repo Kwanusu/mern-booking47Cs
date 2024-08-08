@@ -22,16 +22,16 @@ const Search = () => {
 
     const searchParams = {
       destination: search.destination,
-        checkIn: search.checkIn.toISOString(),
-        checkOut: search.checkOut.toISOString(),
-        adultCount: search.adultCount.toString(),
-        childCount: search.childCount.toString(),
-        page: page.toString(),
-        stars: selectedStars,
-        types: selectedHotelTypes,
-        facilities: selectedFacilities,
-        maxPrice: selectedPrice?.toString(),
-        sortOption,
+      checkIn: search.checkIn.toISOString(),
+      checkOut: search.checkOut.toISOString(),
+      adultCount: search.adultCount.toString(),
+      childCount: search.childCount.toString(),
+      page: page.toString(),
+      stars: selectedStars,
+      types: selectedHotelTypes,
+      facilities: selectedFacilities,
+      maxPrice: selectedPrice?.toString(),
+      sortOption,
     };
     const { data : hotelData } = useQuery(["searchHotels", searchParams], () => 
     apiClient.searchHotels(searchParams)
