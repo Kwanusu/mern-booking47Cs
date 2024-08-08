@@ -45,22 +45,22 @@ const GuestInfoForm = ({ hotelId, pricePerNight }: Props) => {
 
     const onSignInClick = (data: GuestInfoFormData) => {
         search.saveSearchValues(
+            "",
             data.checkIn,
             data.checkOut,
             data.adultCount,
-            data.childCount,
-            hotelId  
+            data.childCount, 
         );
         navigate("/sign-in", { state: { from: location } });
     };
 
     const onSubmit = (data: GuestInfoFormData) => {
         search.saveSearchValues(
+            "",
             data.checkIn,
             data.checkOut,
             data.adultCount,
-            data.childCount,
-            hotelId  
+            data.childCount, 
         );
         navigate(`/hotel/${hotelId}/booking`);
     };
