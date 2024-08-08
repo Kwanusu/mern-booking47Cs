@@ -3,7 +3,6 @@ import { useForm } from 'react-hook-form';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import { StripeCardElement } from '@stripe/stripe-js';
 import { useSearchContext } from '../../contexts/SearchContext';
-import { useParams } from 'react-router-dom';
 import { useMutation } from 'react-query';
 import * as apiClient from "../../api-client";
 import { useAppContext } from '../../contexts/AppContext';
