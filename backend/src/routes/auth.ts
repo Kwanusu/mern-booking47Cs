@@ -53,7 +53,7 @@ router.post("/login", [
     router.get("/validate-token", verifyToken, (req: Request, res: Response) => {
         res.status(200).send({userId: req.userId})
     });
-    router.post("/logout",  (req: Request, res: Response) => {
+    router.post("/logout",  ( res: Response) => {
         res.cookie("auth_token", "",{
             expires: new Date(0),
         });
