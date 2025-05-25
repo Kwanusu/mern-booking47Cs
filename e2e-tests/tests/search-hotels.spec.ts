@@ -36,7 +36,7 @@ test('should show hotel detail', async ({ page }) => {
     await page.getByRole("button", {name: "search"}).click();
 
     await page.getByText("Sarova WhiteSands").click();
-    await expect(page).toHaveURL(/detai/);
+    await expect(page).toHaveURL(/detail/);
     await expect(page.getByRole("button", {name: "Book now"})).toBeVisible();
 });
 test('should book hotel ', async ({ page }) => {
